@@ -4,26 +4,10 @@ Visitor = class {
         this.code = code
         this.composition = []
     }
-    check(path) {
-        console.log("great " + path.name + ", "  + this.name + "!");
-    }
     compose(walkpath) {
         this.walkpath = walkpath
         this.composition.push(walkpath)
-        console.log("that's a nice one");
-    }
-}
-
-mina = new Visitor ("Mina", "a001") 
-lena = new Visitor ("Lena", "a002") 
-pino = new Visitor ("Pino", "a003")
-
-
-
-WalkPath = class {
-    contructor(name) {
-        this.name = name
-        this.composition = []
+        console.log(`nice path you composed ${this.name}`);
     }
     printWalkPath() {
         this.composition.forEach(walkpath => console.log(walkpath))
@@ -31,34 +15,58 @@ WalkPath = class {
 }
 
 
-
-relaxingone = new WalkPath('realaxing walk', 'breathe' )
-slowwalk = new WalkPath('Along The River');
-
-mina.compose(relaxingone)
-lena.compose(slowwalk)
-
+//several slots will compose the walk. which will have a name. 
+// typology: walk, seat, float, breathe.
+// category: landscape oservation, introspection.
+// flow: relaxing, invigorating. 
+ //duration: in minutes.
 
 
-
-
-
-// slots will compose the entire walk. It will have a name. A typology: walk, seat, float, breathe. A category: relaxing, invigorating. Duration: in minutes.
-/*
-Slot = class {
-   constructor (name, tipology, category) {
-   this.name = name,
-   this.tipology = tipology,
-   this.category = category,
-   this.duration = duration    
-    }
+WalkPath = class {
+    contructor(name) {
+        this.name = name
+        this.slots = []     
+    } 
+    added(onemore) {
+      this.onemore = onemore
+      this.slots.push(onemore)
+      console.log(`a new slot was added to the guided walk: ${this.name}`)
 } 
+moreSlots() {
+    this.slots.forEach(onemore => console.log(onemore))
+}
+}
 
-// wheather conditions 
 
-/* Wheather = class {
-    constructor ( sunny, rainy ) {
-        this.sunny = sunny,
-        this.rainy = rainy
-    }
-} */
+Slot = class {
+    constructor (name, tipology, category, flow, duration) {
+    this.name = name
+    this.tipology = tipology
+    this.category = category
+    this.flow = flow
+    this.duration = duration    
+    this.composition = []
+     }
+ }
+
+
+// Visitors
+const mina = new Visitor ("Mina", "a001") 
+const lena = new Visitor ("Lena", "a002") 
+const pino = new Visitor ("Pino", "a003")
+
+console.log(mina.code)
+
+
+// Slots
+const biotope = new Slot ('Biotope', 'walk', 'landscape observation', 'invigorating', '15 min')
+const quarzsand = new Slot ('Quarz Sand', 'seat', 'introspection', 'relaxing', '7 min' )
+const moonlandscape = new Slot ('Moon Landscape', 'walk', 'landscape observation', 'relaxing', '17 min')
+
+
+// Walk Paths
+const relaxingone = new WalkPath('realaxing walk', ['biotope', 'quarzsand', 'moonlandscape'])
+const longone = new WalkPath('Long Walk', [])
+
+lena.compose(relaxingone)
+longone.added(biotope)
