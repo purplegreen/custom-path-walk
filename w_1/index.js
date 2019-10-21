@@ -25,12 +25,12 @@ WalkPath = class {
         this.name = name
         this.composition = []
     }
-    printWalkPathName() {
-        this.composition.forEach(composeWalkPath)
+    printWalkPath() {
+        this.composition.forEach(walkpath => console.log(walkpath))
     }
 }
 
-composeWalkPath = walkpath => console.log(walkpath.name)
+
 
 relaxingone = new WalkPath('realaxing walk', 'breathe' )
 slowwalk = new WalkPath('Along The River');
@@ -38,7 +38,7 @@ slowwalk = new WalkPath('Along The River');
 mina.compose(relaxingone)
 lena.compose(slowwalk)
 
-slowwalk.printWalkPathName()
+
 
 
 
