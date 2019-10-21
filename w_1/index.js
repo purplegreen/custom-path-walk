@@ -2,14 +2,15 @@ Visitor = class {
     constructor(name, code) {
         this.name = name
         this.code = code
-        this.walkpaths = []
+        this.composition = []
     }
     check(path) {
-        console.log("great " + path.name + "and "  + this.name)
+        console.log("great " + path.name + ", "  + this.name + "!");
     }
     compose(walkpath) {
-        this.walkpaths.push(walkpath)
-        walkpath.composition.push(this)
+        this.walkpath = walkpath
+        this.composition.push(walkpath)
+        console.log("that's a nice one");
     }
 }
 
@@ -18,20 +19,23 @@ lena = new Visitor ("Lena", "a002")
 pino = new Visitor ("Pino", "a003")
 
 
+
 WalkPath = class {
     contructor(name) {
-        this.name = name,
+        this.name = name
         this.composition = []
     }
     printWalkPathName() {
-        this.composition.forEach(pathName)
+        this.composition.forEach(composeWalkPath)
     }
 }
 
-pathName = path => console.log(path.name)
-makeComposition = composition => console.log(composition.name)
+composeWalkPath = walkpath => console.log(walkpath.name)
 
-slowwalk = new WalkPath('Along The River')
+relaxingone = new WalkPath('realaxing walk', 'breathe' )
+slowwalk = new WalkPath('Along The River');
+
+mina.compose(relaxingone)
 lena.compose(slowwalk)
 
 slowwalk.printWalkPathName()
