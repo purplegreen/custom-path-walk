@@ -2,39 +2,29 @@ Visitor = class {
     constructor(name, code) {
         this.name = name
         this.code = code
-        this.composition = []
+        this.compose = []
     }
     compose(walkpath) {
         this.walkpath = walkpath
-        this.composition.push(walkpath)
+        this.compose.push(walkpath)
         console.log(`nice path you composed ${this.name}`);
     }
     printWalkPath() {
-        this.composition.forEach(walkpath => console.log(walkpath))
+        this.compose.forEach(walkpath => console.log(walkpath))
     }
 }
-
-
-//several slots will compose the walk. which will have a name. 
-// typology: walk, seat, float, breathe.
-// category: landscape oservation, introspection.
-// flow: relaxing, invigorating. 
- //duration: in minutes.
 
 
 WalkPath = class {
     contructor(name) {
         this.name = name
-        this.slots = []     
+        this.composition = []  
     } 
-    added(onemore) {
-      this.onemore = onemore
-      this.slots.push(onemore)
+    gets(slot) {
+     this.slot = slot
+     this.composition.push(slot) 
       console.log(`a new slot was added to the guided walk: ${this.name}`)
-} 
-moreSlots() {
-    this.slots.forEach(onemore => console.log(onemore))
-}
+   } 
 }
 
 
@@ -45,17 +35,19 @@ Slot = class {
     this.category = category
     this.flow = flow
     this.duration = duration    
-    this.composition = []
+     }
+     isadded(slot) {
+         this.slot = slot
+         slot.composition.push(this) 
+         console.log(`I'm ${this.name} a new slot in your compositon`)
      }
  }
 
 
 // Visitors
 const mina = new Visitor ("Mina", "a001") 
-const lena = new Visitor ("Lena", "a002") 
+const lena = new Visitor ("Lena", "a002")
 const pino = new Visitor ("Pino", "a003")
-
-console.log(mina.code)
 
 
 // Slots
@@ -68,5 +60,5 @@ const moonlandscape = new Slot ('Moon Landscape', 'walk', 'landscape observation
 const relaxingone = new WalkPath('realaxing walk', ['biotope', 'quarzsand', 'moonlandscape'])
 const longone = new WalkPath('Long Walk', [])
 
-lena.compose(relaxingone)
-longone.added(biotope)
+longone.gets(moonlandscape)
+biotope.isadded(relaxingone)
