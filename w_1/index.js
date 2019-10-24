@@ -5,9 +5,9 @@ Visitor = class {
         this.compose = []
     }
     hasComposed(walkpath) {
-        this.walkpath = walkpath
-        walkpath.compose.push(this)
-        console.log(`nice path you composed ${this.name}`);
+        this.compose.push(walkpath)
+        walkpath.composedBy.push(this)
+        console.log(`Nice path you composed ${this.name}`);
     }
     printWalkPath() {
         this.compose.forEach(walkpath => console.log(walkpath))
@@ -18,11 +18,12 @@ Visitor = class {
 WalkPath = class {
     constructor(name) {
         this.name = name
-        this.composition = []  
+        this.composition = [] 
+        this.composedBy = [] 
     } 
     getsSlot(slot) {
-        this.slot = slot
-        slot.compose.push(slot)
+        this.composedBy.push(slot)
+        slot.walkpaths.push(this)
          console.log(`a new slot was added to the guided walk: ${this.name}`)
       } 
    message() {
@@ -44,7 +45,7 @@ Slot = class {
         isAddedTo(walkpath) {
             this.walkpaths.push(walkpath)
             walkpath.composition.push(this) 
-            console.log(`I'm ${this.name} a new slot in the ${this.walpath} walkpath`)
+            console.log(`I'm ${this.name} a new slot in the ${walkpath.name} walkpath`)
             }
      }
  
@@ -63,9 +64,12 @@ const moonScape = new Slot ('Moon Landscape', 'walk', 'landscape observation', '
 
 
 // Walk Paths
-const relaxingOne = new WalkPath('realaxing walk')
+const relaxingOne = new WalkPath('Realaxing Walk')
 const longOne = new WalkPath('Long Walk')
 
-
-biotope.isAddedTo(relaxingOne)
 mina.hasComposed(longOne)
+lena.hasComposed(relaxingOne)
+moonScape.isAddedTo(relaxingOne)
+quarzSand.isAddedTo(relaxingOne)
+relaxingOne.getsSlot(moonScape)
+
