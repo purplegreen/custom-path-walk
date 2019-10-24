@@ -24,10 +24,10 @@ WalkPath = class {
     getsSlot(slot) {
         this.composedBy.push(slot)
         slot.walkpaths.push(this)
-         console.log(`a new slot was added to the guided walk: ${this.name}`)
+         console.log(`A new slot was added to the guided walk: ${this.name}`)
       } 
    message() {
-    console.log(`your walk begins with ${this.name[0]} `)
+    console.log(`Your walk begins with the slot: ${this.composition[0].name} `)
    }
    
 }
@@ -72,4 +72,5 @@ lena.hasComposed(relaxingOne)
 moonScape.isAddedTo(relaxingOne)
 quarzSand.isAddedTo(relaxingOne)
 relaxingOne.getsSlot(moonScape)
+relaxingOne.message()
 
