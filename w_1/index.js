@@ -73,4 +73,7 @@ moonScape.isAddedTo(relaxingOne)
 quarzSand.isAddedTo(relaxingOne)
 relaxingOne.getsSlot(moonScape)
 relaxingOne.message()
+quarzSand.isAddedTo(longOne)
+longOne.message()
+
 
