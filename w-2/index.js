@@ -35,7 +35,7 @@ quarzSand.isAddedTo(longOne)
 longOne.message()
 
 
-// to database
+// save and load to database
 
 const walkpathsCollection  = [longOne, relaxingOne]
 Database.save('walkpaths.json', walkpathsCollection)
