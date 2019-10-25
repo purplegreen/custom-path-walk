@@ -1,3 +1,5 @@
+//written and reviewd with Women Techmakers Berlin - JavaScript C C Vol. 3 
+
 
 
 const WalkPath = require('./walkpath')
@@ -22,6 +24,7 @@ const moonScape = new Slot ('Moon Landscape', 'walk', 'landscape observation', '
 const relaxingOne = new WalkPath('Realaxing Walk')
 const longOne = new WalkPath('Long Walk')
 
+
 mina.hasComposed(longOne)
 lena.hasComposed(relaxingOne)
 moonScape.isAddedTo(relaxingOne)
@@ -31,7 +34,18 @@ relaxingOne.message()
 quarzSand.isAddedTo(longOne)
 longOne.message()
 
-Database.save('walkpath.json', longOne)
-const loadedFile = Database.load('filename.json')
-console.log(loadedFile.name)
 
+// to database
+
+const walkpathsCollection  = [longOne, relaxingOne]
+Database.save('walkpaths.json', walkpathsCollection)
+
+const loadedWalkpaths = Database.load('walkpaths.json')
+
+const slotsCollection = [biotope, quarzSand, moonScape]
+Database.save('slots.json', slotsCollection)
+const loadedSlots = Database.load('slots.json')
+
+const visitorsCollection = [mina, lena, pino]
+Database.save('visitors.json', visitorsCollection)
+const loadedVisitors = Database.load('visitors.json')
