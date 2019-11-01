@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 
 module.exports = class WalkPath {
-  constructor(name) {
+  constructor(name, composition) {
     this.name = name;
     this.composition = composition;
     this.composedBy = [];
