@@ -6,7 +6,7 @@ const WalkPathService = require("./services/walkpath-service");
 const VisitorService = require("./services/visitor-service");
 const SlotService = require("./services/slot-service");
 
-console.log("Let's check this first :)");
+console.log("OK :)");
 
 async function main() {
   const cleo = new Visitor("Cleopatra", "A0445");
@@ -34,6 +34,12 @@ async function main() {
   const newVisitors = await VisitorService.findAll();
 
   console.log(newVisitors[0].name);
+
+  await WalkPathService.add(lazy);
+  await SlotService.add(sandscape);
+
+  const newWalkPath = await WalkPathService.findAll();
+  console.log(newWalkPath[0].name);
 }
 
 main();
