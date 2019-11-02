@@ -1,11 +1,11 @@
 const chalk = require("chalk");
 
 module.exports = class WalkPath {
-  constructor(name, id, composition = []) {
+  constructor(name, id, composedBy, composition = []) {
     this.name = name;
     this.id = id;
+    this.composedBy = composedBy;
     this.composition = composition;
-    this.composedBy = [];
   }
   getsSlot(slot) {
     this.composedBy.push(slot);
