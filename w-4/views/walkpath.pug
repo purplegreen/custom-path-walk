@@ -1,0 +1,8 @@
+extends layout
+
+block content 
+ h1 take a walk and choose a walkpath from this: #{walkpaths.lenght} walkpath options
+ h3 the first option is #{walkpaths[0].name}
+ h3 but we have as well a second option: #{walkpaths[1].name} and #{walkpaths.composition}
+ each walkpat in walkpaths
+  h3 #{walkpaths.name}

@@ -18,6 +18,8 @@
   "homepage": "https://github.com/purplegreen/custom-path-walk#readme",
   "dependencies": {
     "chalk": "^2.4.2",
-    "flatted": "^2.0.1"
+    "express": "^4.17.1",
+    "flatted": "^2.0.1",
+    "pug": "^2.0.4"
   }
 }
