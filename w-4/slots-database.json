@@ -1,1 +1,32 @@
-[["1","2","3"],{"name":"4","id":1,"tipology":"5","category":"6","flow":"7","walkpaths":"8"},{"name":"4","id":2,"tipology":"5","category":"6","flow":"7","walkpaths":"9"},{"name":"4","id":3,"tipology":"5","category":"6","flow":"7","walkpaths":"10"},"Sand Landscape","listening","relaxing","11 min",[],[],[]]
+[
+  {
+    "name": "Biotope",
+    "tipology": "walk",
+    "category": "landscape observation",
+    "flow": "invigorating",
+    "duration": "15 min",
+    "walkpaths": []
+  },
+  {
+    "name": "Quarz Sand",
+    "tipology": "seat",
+    "category": "introspection",
+    "flow": "relaxing",
+    "duration": "7 min",
+    "walkpaths": [
+      "Realaxing Walk",
+      "Long Walk"
+    ]
+  },
+  {
+    "name": "Moon Landscape",
+    "tipology": "walk",
+    "category": "landscape observation",
+    "flow": "relaxing",
+    "duration": "17 min",
+    "walkpaths": [
+      "Realaxing Walk",
+      "Realaxing Walk"
+    ]
+  }
+]
