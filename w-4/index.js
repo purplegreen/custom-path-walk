@@ -19,9 +19,24 @@ app.get("/walkpath/all", async (req, res) => {
   res.render("walkpath", { walkpaths: walkpaths });
 });
 
-app.get("/slots/all", async (req, res) => {
-  const slot = await SlotService.findAll();
-  res.render("slots", { slot: slot });
+app.get("/walkpath/:id", async (req, res) => {
+  const walk = await WalkPathService.find(req.params.id);
+  res.send(walk);
+});
+
+app.post("/walkpath", async (req, res) => {
+  const walk = await WalkPathService.add(req.body);
+  res.send(walk);
+});
+
+app.get("/slots/:id", async (req, res) => {
+  const slot = await SlotService.find(req.params.id);
+  res.render(slot);
+});
+
+app.post("/slots", async (req, res) => {
+  const slot = await SlotService.add(req.body);
+  res.send(slot);
 });
 
 app.listen(3000, () => {

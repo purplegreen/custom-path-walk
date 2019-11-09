@@ -1,74 +1,37 @@
 [
   {
     "name": "Long Walk",
-    "composition": [
-      {
-        "name": "Quarz Sand",
-        "tipology": "seat",
-        "category": "introspection",
-        "flow": "relaxing",
-        "duration": "7 min",
-        "walkpaths": [
-          "Realaxing Walk",
-          "Long Walk"
-        ]
-      }
-    ],
-    "composedBy": [
-      {
-        "name": "Mina",
-        "code": "a001",
-        "compose": [
-          "Long Walk"
-        ]
-      }
-    ]
+    "id": 1,
+    "composedBy": [],
+    "composition": []
   },
   {
     "name": "Realaxing Walk",
-    "composition": [
-      {
-        "name": "Moon Landscape",
-        "tipology": "walk",
-        "category": "landscape observation",
-        "flow": "relaxing",
-        "duration": "17 min",
-        "walkpaths": [
-          "Realaxing Walk",
-          "Realaxing Walk"
-        ]
-      },
-      {
-        "name": "Quarz Sand",
-        "tipology": "seat",
-        "category": "introspection",
-        "flow": "relaxing",
-        "duration": "7 min",
-        "walkpaths": [
-          "Realaxing Walk",
-          "Long Walk"
-        ]
-      }
-    ],
+    "id": 2,
+    "composedBy": [],
+    "composition": []
+  },
+  {
+    "name": "promenade",
+    "id": 3,
+    "composedBy": [],
+    "composition": []
+  },
+  {
+    "name": "A Subtle Walk",
+    "id": 4,
     "composedBy": [
-      {
-        "name": "Lena",
-        "code": "a002",
-        "compose": [
-          "Realaxing Walk"
-        ]
-      },
-      {
-        "name": "Moon Landscape",
-        "tipology": "walk",
-        "category": "landscape observation",
-        "flow": "relaxing",
-        "duration": "17 min",
-        "walkpaths": [
-          "Realaxing Walk",
-          "Realaxing Walk"
-        ]
-      }
-    ]
+      "Biotope",
+      "Moon Landscape"
+    ],
+    "composition": []
+  },
+  {
+    "name": "Slowly On",
+    "composition": [
+      "Moon Landscape",
+      "Quarz Sand"
+    ],
+    "id": 5
   }
 ]
