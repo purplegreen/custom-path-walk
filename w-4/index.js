@@ -1,22 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const WalkPath = require("./models/walkpath");
-const Visitor = require("./models/visitor");
-const Slot = require("./models/slot");
-
 const WalkPathService = require("./services/walkpath-service");
 const VisitorService = require("./services/visitor-service");
 const SlotService = require("./services/slot-service");
 
 const app = express();
 
+app.set("view engine", "pug");
 app.use(bodyParser.json());
 
-app.set("view engine", "pug");
-
 app.get("/", (req, res) => {
-  // res.sendFile(`${__dirname}/index.html`);
   res.render("index");
 });
 

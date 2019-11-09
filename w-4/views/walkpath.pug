@@ -2,6 +2,6 @@ extends layout
 
 block content 
  
-
- each walkpat in walkpaths
-  h3 #{walkpaths.name}
+    h3 Here a choice of possible walkpaths: 
+     each walkpath in walkpaths
+        h4 #{walkpath.name}
