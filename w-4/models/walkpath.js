@@ -8,7 +8,7 @@ module.exports = class WalkPath {
     this.composition = composition;
   }
   getsSlot(slot) {
-    this.composition.push(slot);
+    this.composedBy.push(slot);
     slot.walkpaths.push(this.name);
     console.log(
       chalk.cyanBright`A new slot was added to the guided walk: ${this.name}`
