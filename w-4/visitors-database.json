@@ -1,21 +1,24 @@
 [
   {
     "name": "Mina",
-    "code": "a001",
-    "compose": [
-      "Long Walk"
-    ]
+    "compose": []
   },
   {
     "name": "Lena",
-    "code": "a002",
-    "compose": [
-      "Realaxing Walk"
-    ]
+    "compose": []
   },
   {
     "name": "Pino",
-    "code": "a003",
+    "compose": []
+  },
+  {
+    "name": "Jana",
+    "id": 2,
+    "compose": []
+  },
+  {
+    "name": "Nana",
+    "id": 3,
     "compose": []
   }
 ]

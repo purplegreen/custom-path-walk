@@ -15,15 +15,11 @@
     "category": "introspection",
     "flow": "relaxing",
     "duration": "7 min",
-    "walkpaths": ["Realaxing Walk", "Long Walk"]
+    "walkpaths": []
   },
   {
-    "name": "Moon Landscape",
-    "id": 3,
-    "tipology": "walk",
-    "category": "landscape observation",
-    "flow": "relaxing",
-    "duration": "17 min",
-    "walkpaths": ["Realaxing Walk", "Realaxing Walk"]
+    "name": "Breathe Breathe",
+    "id": 4,
+    "walkpaths": []
   }
 ]

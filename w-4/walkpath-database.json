@@ -1,11 +1,5 @@
 [
   {
-    "name": "Long Walk",
-    "id": 1,
-    "composedBy": [],
-    "composition": []
-  },
-  {
     "name": "Realaxing Walk",
     "id": 2,
     "composedBy": [],
@@ -20,18 +14,16 @@
   {
     "name": "A Subtle Walk",
     "id": 4,
-    "composedBy": [
-      "Biotope",
-      "Moon Landscape"
-    ],
+    "composedBy": [],
     "composition": []
   },
   {
     "name": "Slowly On",
-    "composition": [
+    "id": 5,
+    "composedBy": [
       "Moon Landscape",
       "Quarz Sand"
     ],
-    "id": 5
+    "composition": []
   }
 ]
