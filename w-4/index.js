@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-//walkpath
+//walkpath ----------------------
 app.get("/walkpath/all", async (req, res) => {
   const walkpaths = await WalkPathService.findAll();
   res.render("walkpath", { walkpaths: walkpaths });
@@ -35,7 +35,7 @@ app.delete("/walkpath/:id", async (req, res) => {
   res.send("done");
 });
 
-//slots
+//slots --------------------------
 app.get("/slots/all", async (req, res) => {
   const slot = await SlotService.findAll();
   res.render("slots", { slot: slot });
@@ -56,7 +56,7 @@ app.delete("/slots/:id", async (req, res) => {
   res.send("ok");
 });
 
-// visitors
+// visitors ----------------------
 app.get("/visitors/all", async (req, res) => {
   const visitor = await VisitorService.findAll();
   res.render("visitors", { visitor });
