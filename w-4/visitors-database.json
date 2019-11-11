@@ -1,24 +1,48 @@
-[
-  {
-    "name": "Mina",
-    "compose": []
-  },
-  {
-    "name": "Lena",
-    "compose": []
-  },
-  {
-    "name": "Pino",
-    "compose": []
-  },
-  {
-    "name": "Jana",
-    "id": 2,
-    "compose": []
-  },
-  {
-    "name": "Nana",
-    "id": 3,
-    "compose": []
-  }
-]
+[[
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11"
+],{
+  "name": "12",
+  "compose": "13"
+},{
+  "name": "14",
+  "compose": "15"
+},{
+  "name": "16",
+  "compose": "17"
+},{
+  "name": "18",
+  "compose": "19"
+},{
+  "name": "20",
+  "compose": "21"
+},{
+  "name": "22",
+  "compose": "23"
+},{
+  "name": "24",
+  "compose": "25"
+},{
+  "name": "26",
+  "compose": "27"
+},{
+  "name": "28",
+  "compose": "29"
+},{
+  "name": "30",
+  "compose": "31"
+},{
+  "name": "32",
+  "compose": "33"
+},"Dana",[],"Jana",[],"Nina",[],"Lena",[],"Nana",[],"Pina",[],"Gina",[],"Xsana",[],"Nello",[],"Mona",[],"Monalisa",[
+  "34"
+],"Gioconda Walk"]

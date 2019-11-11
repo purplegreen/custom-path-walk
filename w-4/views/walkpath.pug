@@ -1,7 +1,18 @@
 extends layout
 
 block content 
- 
-    h3 Here a choice of possible Guided Walks: 
+ h1 Walkpaths
+    h3 Here a choice of already composed possible Guided Walks: 
+     
      each walkpath in walkpaths
-        h4 #{walkpath.name}
+         h2 
+            ul #{walkpath.name}
+
+            h3
+               li #{walkpath.composedBy}
+               li #{walkpath.composition}
+                     
+       
+
+           
+             
