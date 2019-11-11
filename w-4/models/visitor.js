@@ -1,9 +1,10 @@
 const chalk = require("chalk");
 
 module.exports = class Visitor {
-  constructor(name, id) {
+  constructor(name, id, mood) {
     this.name = name;
     this.id = id;
+    this.mood = mood;
     this.compose = [];
   }
   hasComposed(walkpath) {
@@ -16,7 +17,7 @@ module.exports = class Visitor {
   printWalkPath() {
     this.compose.forEach(walkpath => console.log(walkpath));
   }
-  static create({ name, id }) {
-    return new Visitor(name, id);
+  static create({ name, id, mood }) {
+    return new Visitor(name, id, mood);
   }
 };

@@ -74,7 +74,7 @@ app.post("/visitors", async (req, res) => {
 
 app.delete("/visitors/:id", async (req, res) => {
   const visitor = await VisitorService.del(req.params.id);
-  res.send("done");
+  res.send("ok");
 });
 
 app.listen(3000, () => {

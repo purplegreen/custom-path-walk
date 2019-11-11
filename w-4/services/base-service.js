@@ -11,12 +11,14 @@ module.exports = class Service {
     return new Promise((resolve, reject) => {
       fs.readFile(this.dbPath, "utf8", async (err, file) => {
         if (err) {
-          if (err.code === "ENOENT") {
+          if (err.code == "ENOENT") {
             await this.saveAll([]);
             return resolve([]);
           }
+
           return reject(err);
         }
+
         const items = Flatted.parse(file).map(this.model.create);
 
         resolve(items);
@@ -26,6 +28,9 @@ module.exports = class Service {
 
   async add(item) {
     const allItems = await this.findAll();
+    const lastItem = allItems[allItems.length - 1];
+    const lastItemsId = (lastItem && lastItem.id) || 0;
+    item.id = lastItemsId + 1;
 
     allItems.push(item);
 
@@ -34,35 +39,25 @@ module.exports = class Service {
     return item;
   }
 
-  async update(updatedItem) {
+  async del(itemId) {
     const allItems = await this.findAll();
-    const itemIndex = allItems.findIndex(item => item.id === updatedItem.id);
+    const itemIndex = allItems.findIndex(p => p.id == itemId);
+    if (itemIndex < 0) return;
 
-    if (itemIndex < 0) {
-      await this.add(updatedItem);
-    } else {
-      allItems.splice(itemIndex, 1, updatedItem);
-      await this.saveAll(allItems);
-    }
-  }
-
-  async delete(itemId) {
-    let allItems = await this.findAll();
-
-    allItems = allItems.filter(item => item.id !== itemId);
+    allItems.splice(itemIndex, 1);
 
     await this.saveAll(allItems);
   }
 
-  async find(itemId) {
+  async find(itemId = 1) {
     const allItems = await this.findAll();
 
-    return allItems.find(item => item.id === itemId);
+    return allItems.find(p => p.id == itemId);
   }
 
   async saveAll(items) {
     return new Promise((resolve, reject) => {
-      fs.writeFile(this.dbPath, Flatted.stringify(items, null, 2), err => {
+      fs.writeFile(this.dbPath, Flatted.stringify(items), (err, file) => {
         if (err) return reject(err);
 
         resolve();
