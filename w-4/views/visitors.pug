@@ -4,5 +4,9 @@ block content
      h1 Hello There!
        h3 Wecome
          each visitors in visitor
-             h4 #{visitors.name}
-              h6 #{visitors.compose}
+             h4 
+              ul #{visitors.name}
+                h6 
+                  li #{visitors.mood}
+                  li #{visitors.compose}
+                  li #{visitors.id}
