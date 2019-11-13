@@ -1,0 +1,18 @@
+extends layout
+
+block content 
+  h1 Slots for your Walkpath
+     h3 Please choose from these 
+       #{slot.length}  available Slots for your walk composition
+           
+          
+            each slots in slot
+              h2
+                ul #{slots.name}
+                  h6
+                    li #{slots.tipology}
+                    li #{slots.category}
+                    li #{slots.flow}
+                    li #{slots.duration}
+                    li #{slots.id}
+

@@ -1,0 +1,19 @@
+extends layout
+
+block content 
+ h1 Walkpaths
+    h3 Here a choice of already composed possible Guided Walks: 
+     
+     each walkpath in walkpaths
+         h2 
+            ul #{walkpath.name}
+
+            h3
+               li #{walkpath.composedBy}
+               li #{walkpath.composition}
+               li #{walkpath.id}
+                     
+       
+
+           
+             
