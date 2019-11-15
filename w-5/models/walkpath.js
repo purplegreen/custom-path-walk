@@ -6,12 +6,14 @@ const WalkPathSchema = new mongoose.Schema({
     required: true,
     minlength: 2
   },
-
-  composition: []
+  composers: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Visitor"
+    }
+  ]
 });
 
-WalkPathSchema.plugin(require("mongoose-autopopulate"));
-
-const WalkPathModel = mongoose.model("WalkPath", WalkPathSchema);
+const WalkPathModel = mongoose.model("Walkpath", WalkPathSchema);
 
 module.exports = WalkPathModel;

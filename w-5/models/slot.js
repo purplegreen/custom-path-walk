@@ -9,8 +9,6 @@ const SlotSchema = new mongoose.Schema({
   componentOf: []
 });
 
-SlotSchema.plugin(require("mongoose-autopopulate"));
-
 const SlotModel = mongoose.model("Slot", SlotSchema);
 
 module.exports = SlotModel;

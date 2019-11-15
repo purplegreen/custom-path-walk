@@ -25,9 +25,11 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.post("/:id/walkpaths", async (req, res) => {
-  const visitor = await VisitorService.find(req.id);
-  const walkpath = await WalkPathService.find(req.body.walkpaths);
-  res.send("walkpaths");
+  const visitor = await VisitorService.find(req.params.id);
+  const walkpath = await WalkPathService.find(req.body.walkpath);
+  await VisitorService.composes(visitor, walkpath);
+
+  res.send(visitor);
 });
 
 module.exports = router;
