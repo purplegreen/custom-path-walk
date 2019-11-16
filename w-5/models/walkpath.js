@@ -6,6 +6,12 @@ const WalkPathSchema = new mongoose.Schema({
     required: true,
     minlength: 2
   },
+  composition: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Slot"
+    }
+  ],
   composers: [
     {
       type: mongoose.SchemaTypes.ObjectId,

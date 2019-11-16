@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const WalkPathService = require("../services/walkpath-service");
+const SlotService = require("../services/slot-service");
 
 router.get("/all", async (req, res) => {
   const walkpaths = await WalkPathService.findAll();
@@ -21,6 +22,14 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const walk = await WalkPathService.del(req.params.id);
   res.send("walk");
+});
+
+router.post("/:id/composition", async (req, res) => {
+  const walkpath = await WalkPathService.find(req.params.id);
+  const slot = await SlotService.find(req.body.slot);
+  await SlotService.componentOf(walkpath, slot);
+
+  res.send(walkpath);
 });
 
 module.exports = router;

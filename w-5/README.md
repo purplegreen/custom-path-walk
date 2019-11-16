@@ -18,6 +18,10 @@ http://localhost:3000/visitors/all
 
 http://localhost:3000/slots/all
 
-via axios = visitor create a new walkpath
+With axios ======
 
+visitor create a new walkpath
 axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id}).then(console.log)
+
+slots are added to composition
+axios.post('http://localhost:3000/:id/composition', { slot:id}).then(console.log)

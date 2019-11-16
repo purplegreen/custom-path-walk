@@ -6,7 +6,12 @@ const SlotSchema = new mongoose.Schema({
   category: String,
   flow: String,
   duration: Number,
-  componentOf: []
+  componentOf: [
+    {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: "Walkpath"
+    }
+  ]
 });
 
 const SlotModel = mongoose.model("Slot", SlotSchema);
