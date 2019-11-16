@@ -8,20 +8,41 @@ The visitors of the outdoor exhibition will be able to compose a personalized wa
 
 The App will allow the visitors to compose a guided walk and customize it on their personal wishes. As for exhample the walk can be composed obtaining a relaxing slow pace, or by putting together a rytmathic flow. So that expert walker, older people, meditative types, or kids for example can all tailor their experience.
 
-start # mongodb
+### start mongodb
+
+```
 brew services start mongodb-community
+```
+
 brew services restart mongodb-community
+
+```
+
+### ---
+```
 
 http://localhost:3000/walkpath/all
 
+```
 http://localhost:3000/visitors/all
+```
 
 http://localhost:3000/slots/all
 
-With axios ======
+```
+### With AXIOS ======
 
-visitor create a new walkpath
+### visitor create a new walkpath
+```
+
 axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id}).then(console.log)
 
-slots are added to composition
+```
+### slots are added to composition
+```
+
 axios.post('http://localhost:3000/:id/composition', { slot:id}).then(console.log)
+
+```
+
+```
