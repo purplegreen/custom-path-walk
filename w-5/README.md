@@ -14,35 +14,35 @@ The App will allow the visitors to compose a guided walk and customize it on the
 brew services start mongodb-community
 ```
 
+```
 brew services restart mongodb-community
-
 ```
 
-### ---
-```
+### routes
 
+```
 http://localhost:3000/walkpath/all
+```
 
 ```
 http://localhost:3000/visitors/all
 ```
 
+```
 http://localhost:3000/slots/all
 
 ```
+
 ### With AXIOS ======
 
 ### visitor create a new walkpath
-```
 
+```
 axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id}).then(console.log)
-
 ```
+
 ### slots are added to composition
-```
 
+```
 axios.post('http://localhost:3000/:id/composition', { slot:id}).then(console.log)
-
-```
-
 ```
