@@ -6,7 +6,7 @@ class VisitorService extends BaseService {
 
   async composes(visitor, walkpath) {
     visitor.walkpaths.push(walkpath);
-    walkpath.composers.push(visitor);
+    walkpath.composer.push(visitor);
     await visitor.save();
     await walkpath.save();
   }

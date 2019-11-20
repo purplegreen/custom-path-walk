@@ -12,13 +12,15 @@ const WalkPathSchema = new mongoose.Schema({
       ref: "Slot"
     }
   ],
-  composers: [
+  composer: [
     {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "Visitor"
     }
   ]
 });
+
+WalkPathSchema.plugin(require("mongoose-autopopulate"));
 
 const WalkPathModel = mongoose.model("Walkpath", WalkPathSchema);
 

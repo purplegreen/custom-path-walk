@@ -4,7 +4,7 @@ const WalkPathModel = require("../models/walkpath");
 class WalkPathService extends BaseService {
   model = WalkPathModel;
 
-  async composition(walkpath, slot) {
+  async composed(walkpath, slot) {
     walkpath.composition.push(slot);
     slot.componentOf.push(walkpath);
     await walkpath.save();

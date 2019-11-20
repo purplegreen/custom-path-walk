@@ -6,13 +6,10 @@ const SlotSchema = new mongoose.Schema({
   category: String,
   flow: String,
   duration: Number,
-  componentOf: [
-    {
-      type: mongoose.SchemaTypes.ObjectId,
-      ref: "Walkpath"
-    }
-  ]
+  componentOf: []
 });
+
+SlotSchema.plugin(require("mongoose-autopopulate"));
 
 const SlotModel = mongoose.model("Slot", SlotSchema);
 

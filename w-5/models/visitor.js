@@ -11,6 +11,8 @@ const VisitorSchema = new mongoose.Schema({
   ]
 });
 
+VisitorSchema.plugin(require("mongoose-autopopulate"));
+
 const VisitorModel = mongoose.model("Visitor", VisitorSchema);
 
 module.exports = VisitorModel;
