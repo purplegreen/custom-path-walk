@@ -68,3 +68,9 @@ axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id }).then
 ```
 axios.post('http://localhost:3000/walkpath/:id/composition', { slot:id }).then(console.log)
 ```
+
+### Testing with Ava and nyc coverage
+
+```
+npx nyc npm test
+```
