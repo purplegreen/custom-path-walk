@@ -53,15 +53,17 @@ axios.post('http://localhost:3000/walkpath', {name: String, composition: []}).th
 
 ### Create a new Slot
 
+```
 axios.post('http://localhost:3000/slots', {name: String, tipology: String, category: String, flow: string, duration: Number }).then(console.log)
+```
 
-### visitor create a new walkpath
+### Visitor create a new walkpath
 
 ```
 axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id }).then(console.log)
 ```
 
-### slots is added to walkpath composition
+### Slot added to walkpath composition
 
 ```
 axios.post('http://localhost:3000/walkpath/:id/composition', { slot:id }).then(console.log)
