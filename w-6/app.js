@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const personRouter = require("./routes/person");
-const meetupRouter = require("./routes/meetup");
+const visitorsRouter = require("./routes/visitors");
+const walkpathRouter = require("./routes/walkpath");
 
 require("./mongo-connection");
 

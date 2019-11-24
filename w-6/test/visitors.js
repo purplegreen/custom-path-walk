@@ -11,7 +11,7 @@ test("Create Visitor", async t => {
   };
 
   const res = await request(app)
-    .post("/visitor")
+    .post("/visitors")
     .send(visitorCreate);
 
   t.is(res.status, 200);
@@ -31,16 +31,18 @@ test("Fetch a visitor", async t => {
   // create visitor
   const danaVisitorCreated = (
     await request(app)
-      .post("/visitor")
+      .post("/visitors")
       .send(visitorCreate)
   ).body;
 
   // fetch visitor
-  const fetchRes = await request(app).get(`/visitor/${danaVisitorCreated._id}`);
+  const fetchRes = await request(app).get(
+    `/visitors/${danaVisitorCreated._id}`
+  );
   t.is(fetchRes.status, 200);
 
   const fetchResJason = await request(app).get(
-    `/visitor/${danaVisitorCreated._id}/json`
+    `/visitors/${danaVisitorCreated._id}/json`
   );
   // checking server respins status success
   t.is(fetchResJason.status, 200);
@@ -55,21 +57,26 @@ test("Delete a visitor", async t => {
 
   //create
   const visitorCreate = { name: "Lina", mood: "lolly", walkpaths: [] };
-  const linaVisitorCreate = (
+  const linaVisitorCreated = (
     await request(app)
-      .post("/visitor")
+      .post("/visitors")
       .send(visitorCreate)
   ).body;
 
   // delete
   const deleteRes = await request(app).delete(
-    `/visitor/${linaVisitorCreate._id}`
+    `/visitors/${linaVisitorCreated._id}`
   );
+  t.is(deleteRes.status, 200);
+  t.is(deleteRes.ok, true);
+
+  //reder detail page of deleted visitor
+  const fetch = await request(app).get(`/visitors/${linaVisitorCreated._id}`);
   t.is(fetch.status, 404);
 
   // fetch JSON data of deleted
   const fetchJson = await request(app).get(
-    `/visitot/${linaVisitorCreated._id}/json`
+    `/visitors/${linaVisitorCreated._id}/json`
   );
   // checking for server response status - page not found 404
   t.is(fetchJson.status, 404);

@@ -4,12 +4,12 @@
   "description": "Is an App to compose and follow a custom guided walk.",
   "main": "index.js",
   "repository": {
-    "scripts": {
-      "test": "ava --verbose --watch",
-      "test-coverage": "nyc ava --verbose"
-    },
     "type": "git",
     "url": "git+https://github.com/purplegreen/custom-path-walk.git"
+  },
+  "scripts": {
+    "test": "ava --verbose --watch",
+    "test-coverage": "nyc ava --verbose"
   },
   "author": "Deborah Ligorio dehlix",
   "license": "MIT",
