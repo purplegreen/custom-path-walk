@@ -10,7 +10,13 @@ router.get("/all", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const visitor = await VisitorService.find(req.body);
+  const visitor = await VisitorService.find(req.params.id);
+  res.send(visitor);
+});
+
+router.get("/:id/json", async (req, res) => {
+  const visitor = await VisitorService.find(req.params.id);
+  if (!visitor) res.status(404);
   res.send(visitor);
 });
 

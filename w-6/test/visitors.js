@@ -48,7 +48,7 @@ test("Fetch a visitor", async t => {
   t.is(fetchResJason.status, 200);
 
   // JSON endpoint - compare fetched with created
-  const danaVisitorFetched = fetchRes.fetchResJason.body;
+  const danaVisitorFetched = fetchResJason.body;
   t.deepEqual(danaVisitorFetched, danaVisitorCreated);
 });
 
