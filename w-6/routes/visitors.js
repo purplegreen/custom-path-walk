@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 
 router.delete("/:id", async (req, res) => {
   const visitor = await VisitorService.del(req.params.id);
-  res.send("visitor");
+  res.send(visitor);
 });
 
 router.post("/:id/walkpaths", async (req, res) => {

@@ -70,8 +70,10 @@ test("Delete a visitor", async t => {
   t.is(deleteRes.status, 200);
   t.is(deleteRes.ok, true);
 
-  //reder detail page of deleted visitor
-  const fetch = await request(app).get(`/visitors/${linaVisitorCreated._id}`);
+  //render detail page of deleted visitor
+  const fetch = await request(app).get(
+    `/visitors/${linaVisitorCreated._id}/json`
+  );
   t.is(fetch.status, 404);
 
   // fetch JSON data of deleted
