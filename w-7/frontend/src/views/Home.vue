@@ -5,7 +5,7 @@ export default {
   name: "home",
   components: {},
   computed: {
-    ...mapState(["walkpaths", "counter"])
+    ...mapState(["walkpath", "counter"])
   },
   methods: {
     ...mapActions(["fetchWalkpaths"])
@@ -19,5 +19,5 @@ export default {
 <template lang="pug">
   h1 hello
    h2 ok 
-   h3 {{ walkpaths }}
+   h3 {{ walkpath }}
 </template>

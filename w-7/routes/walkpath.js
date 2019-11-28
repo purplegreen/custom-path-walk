@@ -15,8 +15,13 @@ router.get("/all/json", async (req, res) => {
 });
 
 router.get("/:id", async (req, res) => {
-  const walk = await WalkPathService.find(req.params.id);
-  res.send("data", { data: walk });
+  const walkpath = await WalkPathService.find(req.params.id);
+  res.render("data", { data: walkpath });
+});
+
+router.get("/:id/json", async (req, res) => {
+  const walkpath = await WalkPathService.find(req.params.id);
+  res.send(walkpath);
 });
 
 router.post("/", async (req, res) => {
