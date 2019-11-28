@@ -1,9 +1,12 @@
 <script>
+import WalkpathCard from "@/components/walkpath-card.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
   name: "home",
-  components: {},
+  components: {
+    WalkpathCard
+  },
   computed: {
     ...mapState(["walkpaths", "counter"])
   },
@@ -19,5 +22,8 @@ export default {
 <template lang="pug">
   h1 hello
    h2 ok 
-   h3 {{ walkpaths }}
+   ul 
+    li 
+      h5 {{ walkpaths }}
+      walkpath-card(v-for='walkpath in walkpaths', :walkpath='walkpath')
 </template>
