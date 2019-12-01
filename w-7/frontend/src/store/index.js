@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     counter: 0,
-    walkpaths: []
+    walkpaths: [],
+    visitor: []
   },
   mutations: {
     SET_COUNTER(state, newCount) {
@@ -17,7 +18,7 @@ export default new Vuex.Store({
       state.walkpaths = data;
     },
     SET_VISITORS(state, data) {
-      state.visitors = data;
+      state.visitor = data;
     }
   },
   actions: {

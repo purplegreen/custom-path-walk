@@ -1,10 +1,10 @@
 <script>
 export default {
-  name: "VisitorCard",
-  props: ["visitors"],
+  name: "VisitorsCard",
+  props: ["visitor"],
   computed: {
     visitorUrl() {
-      return `/visitors/${this.visitors._id}`;
+      return `/visitor/${this.visitors._id}`;
     }
   }
 };
@@ -13,8 +13,8 @@ export default {
 
 <template lang='pug'>
 
-h3 {{ visitors.name}}
-   p {{ visitors.mood}} 
+h3 {{ visitor.name}}
+   p {{ visitor.mood}} 
  
 
 

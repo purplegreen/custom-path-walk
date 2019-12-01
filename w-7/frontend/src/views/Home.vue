@@ -6,8 +6,8 @@ import { mapState, mapActions } from "vuex";
 export default {
   name: "home",
   components: {
-    WalkpathCard,
-    VisitorsCard
+    "walkpath-card": WalkpathCard,
+    "visitors-card": VisitorsCard
   },
   computed: {
     ...mapState(["walkpaths", "counter", "visitor"])
@@ -26,9 +26,11 @@ export default {
   section 
     button.increment-button(@click="incrementCounter") Increment
     div {{ counter }}
-    walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
-    
-    visitor-card.single-card-green(v-for='visitors in visitor', :visitors='visitors', :key="visitors.id")
+    article.bluebox
+      walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
+    article.grenbox
+      h2 our Visitors
+      visitor-card.single-card-green(v-for='visitors in visitor', :visitors='visitors', :key="visitors.id")
 </template>
 
 
@@ -36,6 +38,15 @@ export default {
 section {
   padding: 40px 0;
   border: 1px solid black;
+}
+.bluebox {
+  border: 1px solid blue;
+  padding: 20px;
+}
+
+.greenbox {
+  border: 1px solid green;
+  padding: 20px;
 }
 
 .increment-button {
