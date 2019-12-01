@@ -30,7 +30,7 @@ export default {
       walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
     article.grenbox
       h2 our Visitors
-      visitor-card.single-card-green(v-for='visitors in visitor', :visitors='visitors', :key="visitors.id")
+      visitors-card.single-card-green(v-for='visitor in visitors', :visitor='visitor', :key="visitor.id")
 </template>
 
 
