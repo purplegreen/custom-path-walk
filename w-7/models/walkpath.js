@@ -9,13 +9,19 @@ const WalkPathSchema = new mongoose.Schema({
   composition: [
     {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "Slot"
+      ref: "Slot",
+      autopopulate: {
+        maxDepth: 1
+      }
     }
   ],
   composer: [
     {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "Visitor"
+      ref: "Visitor",
+      autopopulate: {
+        maxDepth: 1
+      }
     }
   ]
 });

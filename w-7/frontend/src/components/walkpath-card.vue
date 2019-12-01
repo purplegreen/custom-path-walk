@@ -13,5 +13,10 @@ export default {
 
 <template lang='pug'>
 
-p {{ walkpath.name}}
+h3 {{ walkpath.name}}
+   p {{ walkpath.composition}} {{ walkpath.composers}}
+ 
+
+
+
 </template>

@@ -6,7 +6,10 @@ const VisitorSchema = new mongoose.Schema({
   walkpaths: [
     {
       type: mongoose.SchemaTypes.ObjectId,
-      ref: "Walkpath"
+      ref: "Walkpath",
+      autopopulate: {
+        maxDepth: 1
+      }
     }
   ]
 });
