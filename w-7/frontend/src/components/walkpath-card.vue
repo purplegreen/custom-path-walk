@@ -13,10 +13,11 @@ export default {
 
 <template lang='pug'>
 
-h3 {{ walkpath.name}}
-   p {{ walkpath.composition}} {{ walkpath.composers}}
- 
+h3 {{ walkpath.name }}
 
+            h5 Composition:
+            li(v-for="composition in walkpath.composition") {{ composition.name }}
+               
 
 
 </template>

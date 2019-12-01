@@ -15,6 +15,9 @@ export default new Vuex.Store({
     },
     SET_WALKPATHS(state, data) {
       state.walkpaths = data;
+    },
+    SET_VISITORS(state, data) {
+      state.visitors = data;
     }
   },
   actions: {
@@ -25,6 +28,10 @@ export default new Vuex.Store({
     async fetchWalkpaths({ commit }) {
       const result = await axios.get("http://localhost:3000/walkpath/all/json");
       commit("SET_WALKPATHS", result.data);
+    },
+    async fetchVisitors({ commit }) {
+      const result = await axios.get("http://localhost:3000/visitors/all/json");
+      commit("SET_VISITORS", result.data);
     }
   },
   modules: {}

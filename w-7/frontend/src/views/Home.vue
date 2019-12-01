@@ -1,20 +1,23 @@
 <script>
 import WalkpathCard from "@/components/walkpath-card.vue";
+import VisitorsCard from "@/components/visitor-card.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
   name: "home",
   components: {
-    WalkpathCard
+    WalkpathCard,
+    VisitorsCard
   },
   computed: {
-    ...mapState(["walkpaths", "counter"])
+    ...mapState(["walkpaths", "counter", "visitor"])
   },
   methods: {
-    ...mapActions(["fetchWalkpaths", "incrementCounter"])
+    ...mapActions(["fetchWalkpaths", "incrementCounter", "fetchVisitors"])
   },
   created() {
     this.fetchWalkpaths();
+    this.fetchVisitors();
   }
 };
 </script>
@@ -23,7 +26,9 @@ export default {
   section 
     button.increment-button(@click="incrementCounter") Increment
     div {{ counter }}
-    walkpath-card.single-card(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
+    walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
+    
+    visitor-card.single-card-green(v-for='visitors in visitor', :visitors='visitors', :key="visitors.id")
 </template>
 
 
@@ -50,8 +55,14 @@ section {
   color: white;
 }
 
-.single-card {
+.single-card-blue {
   border: 1px solid blue;
+  padding: 20px;
+  margin: 20px;
+}
+
+.single-card-green {
+  border: 1px solid green;
   padding: 20px;
   margin: 20px;
 }
