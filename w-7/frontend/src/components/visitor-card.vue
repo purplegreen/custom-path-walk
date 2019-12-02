@@ -15,6 +15,7 @@ export default {
 
 h3 {{ visitor.name}}
    p {{ visitor.mood}} 
+   
  
 
 
