@@ -16,8 +16,9 @@ export default {
 h3 {{ walkpath.name }}
 
             h4 Composition:
-            li.lis-text(v-for="composition in walkpath.composition") {{ composition.name }}
-               
+            p.lis-text(v-for="composition in walkpath.composition") {{ composition.name }}   
+          
+                
 
 
 </template>
@@ -39,5 +40,9 @@ h4 {
   list-style: none;
   text-align: left;
   font-weight: 100;
+}
+
+.modal {
+  background-color: aliceblue;
 }
 </style>

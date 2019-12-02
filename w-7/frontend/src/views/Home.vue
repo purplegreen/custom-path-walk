@@ -25,8 +25,9 @@ export default {
 <template lang="pug">
   section 
       article.wrap-counter
+        div.counter {{ counter }}
         button.increment-button(@click="incrementCounter") Increment
-        div {{ counter }}
+        
 
       article
        h2.title Choose a Walkpath
@@ -46,35 +47,54 @@ export default {
 <style scoped>
 section {
   display: grid;
-  grid-template-rows: 200px auto auto auto auto;
+  grid-template-rows: 450px auto auto auto auto;
   justify-items: center;
   padding: 40px 0;
   border-radius: 8px;
   height: 100%;
   padding: 20px;
   margin: 20px;
-  border: 1px solid powderblue;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
+  box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
 }
 
 .wrap-counter {
-  background-color: gainsboro;
-  border-radius: 8px;
-  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-items: stretch;
+  width: 300px;
+  height: 300px;
   padding: 20px;
-  margin-bottom: 50px;
+  border-radius: 50%;
+  background: rgb(176, 224, 230);
+  background: linear-gradient(
+    0deg,
+    rgba(176, 224, 230, 1) 0%,
+    rgba(65, 192, 174, 0.6558998599439776) 14%,
+    rgba(5, 142, 247, 1) 100%
+  );
 }
 
 .increment-button {
+  place-self: center;
   color: deepskyblue;
   padding: 10px 20px;
   border-radius: 8px;
   background-color: white;
-  border: 1px solid deepskyblue;
+  border: 1px solid transparent;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 20px;
   width: 130px;
+}
+
+.counter {
+  font-size: 7.5em;
+  font-weight: 400;
+  color: whitesmoke;
 }
 
 .increment-button:hover {
@@ -95,23 +115,12 @@ section {
   justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 50px;
+  background-color: white;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
+  box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
   width: 100%;
-}
-
-.greenbox {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  border: 1px solid green;
-  padding: 20px;
-  width: 100%;
-}
-
-.single-card-green {
-  background-color: darkseagreen;
-  border-radius: 8px;
-  width: 20%;
 }
 
 .single-card-blue {
@@ -123,10 +132,26 @@ section {
   border-radius: 8px;
   padding: 20px;
   margin: 4px 20px;
+  width: 20vw;
+}
+
+.greenbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+  width: 90%;
 }
 
 .single-card-green {
-  border: 1px solid green;
+  background-color: darkseagreen;
+  border-radius: 8px;
+  width: 20%;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
+  box-shadow: 0px 10px 13px -7px #000000,
+    inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
   padding: 20px;
   margin: 20px;
 }
