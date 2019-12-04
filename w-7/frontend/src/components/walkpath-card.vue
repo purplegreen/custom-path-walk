@@ -1,30 +1,70 @@
 <script>
 export default {
+  data() {
+    return {
+      isOpen: false
+    };
+  },
   name: "WalkpathCard",
   props: ["walkpath"],
   computed: {
     walkpathUrl() {
       return `/walkpath/${this.walkpath._id}`;
     }
+  },
+  methods: {
+    toggleModal() {
+      this.isOpen = !this.isOpen;
+    }
   }
 };
 </script>
 
+<template lang="pug">
 
-<template lang='pug'>
+  div.wrapper 
+    h2 {{ walkpath.name }}
 
-h3 {{ walkpath.name }}
+          h6.atLeft Composition:
+            
+              fade.transition
+  
+    ul
+            h4(@click="toggleModal")(v-for="slots in walkpath.composition") {{ slots.name }} 
+                span(v-if='isOpen')
+                    ul.lis-text(@click="toggleModal") 
+                      li {{ slots.tipology }}
+                      li {{ slots.category }}
+                      li {{ slots.flow }}
+                      li {{ slots.duration }} min
+                    
+                     
 
-            h4 Composition:
-            p.lis-text(v-for="composition in walkpath.composition") {{ composition.name }}   
-          
+
                 
+                              
+                      
+               
+  
+              
+             
+             
 
 
 </template>
 
-
 <style scoped>
+.lis-text {
+  list-style: none;
+  text-align: left;
+  font-weight: 100;
+}
+
+h2 {
+  font-weight: 600;
+  color: aliceblue;
+}
+
 h4 {
   display: block;
   margin-block-start: 0.33em;
@@ -34,15 +74,27 @@ h4 {
   font-weight: bold;
   text-align: left;
   font-family: "Alata", sans-serif;
+  color: aliceblue;
 }
 
-.lis-text {
-  list-style: none;
+h6 {
+  color: darkslategray;
+}
+
+.atLeft {
   text-align: left;
-  font-weight: 100;
 }
 
-.modal {
-  background-color: aliceblue;
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
