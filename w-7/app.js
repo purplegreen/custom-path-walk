@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const visitorsRouter = require("./routes/visitors");
 const walkpathRouter = require("./routes/walkpath");
+const slotsRouter = require("./routes/slots");
 
 require("./mongo-connection");
 
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 
 app.use("/visitors", visitorsRouter);
 app.use("/walkpath", walkpathRouter);
+app.use("/slots", slotsRouter);
 
 app.get("/", (req, res) => {
   res.render("index");
