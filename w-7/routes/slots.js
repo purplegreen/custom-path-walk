@@ -35,11 +35,4 @@ router.delete("/:id", async (req, res) => {
   res.send(slot);
 });
 
-router.post("/:id/componetOf", async (req, res) => {
-  const slot = await SlotService.find(req.params.id);
-  const walkpath = await WalkPathService.find(req.body.walkpath);
-  await WalkPathService.composed(slot, walkpath);
-  res.send("slot");
-});
-
 module.exports = router;
