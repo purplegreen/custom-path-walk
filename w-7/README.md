@@ -42,19 +42,23 @@ http://localhost:3000/slots/all
 ### Create a new Visitor
 
 ```
-axios.post('http://localhost:3000/visitors', {name: String, mood:String, walkpaths: [] }).then(console.log)
+axios.post('http://localhost:3000/visitors', {name: Mina, mood:rusted, walkpaths: [] }).then(console.log)
 ```
 
 ### Create a new Walkpath
 
 ```
-axios.post('http://localhost:3000/walkpath', {name: String, composition: []}).then(console.log)
+axios.post('http://localhost:3000/walkpath', {name: Along the Shore, composition: [ { slot:id } ]}).then(console.log)
 ```
 
 ### Create a new Slot
 
 ```
-axios.post('http://localhost:3000/slots', {name: String, tipology: String, category: String, flow: string, duration: Number }).then(console.log)
+axios.post('http://localhost:3000/slots', { name: 'Marine Life',
+    tipology : "floating",
+    category : "observation",
+    flow : "very slow",
+    duration: "19"}).then(console.log)
 ```
 
 ### Visitor create a new walkpath
@@ -69,8 +73,8 @@ axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id }).then
 axios.post('http://localhost:3000/walkpath/:id/composition', { slot:id }).then(console.log)
 ```
 
-### Testing with Ava and nyc coverage
+###
 
 ```
-npx nyc npm test
+
 ```
