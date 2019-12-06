@@ -1,19 +1,21 @@
 <script>
 import WalkpathCard from "@/components/walkpath-card.vue";
 import VisitorsCard from "@/components/visitor-card.vue";
+import TiTle from "@/components/title.vue";
 import { mapState, mapActions } from "vuex";
 
 export default {
   name: "home",
   components: {
     "walkpath-card": WalkpathCard,
-    "visitors-card": VisitorsCard
+    "visitors-card": VisitorsCard,
+    "main-title": TiTle
   },
   computed: {
     ...mapState(["walkpaths", "counter", "visitors"])
   },
   methods: {
-    ...mapActions(["fetchWalkpaths", "incrementCounter", "fetchVisitors"])
+    ...mapActions(["fetchWalkpaths", "decrementCounter", "fetchVisitors"])
   },
   created() {
     this.fetchWalkpaths();
@@ -24,22 +26,25 @@ export default {
 
 <template lang="pug">
   section 
-      article.wrap-counter
-        div.counter {{ counter }}
-        button.increment-button(@click="incrementCounter") Increment
-        
-
-      article
-       h2.title Choose a Walkpath
       
-      article.bluebox
-        walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
-  
-      article
-        h2.title our Visitors
+        main-title
 
-      article.greenbox
-        visitors-card.single-card-green(v-for='visitor in visitors', :visitor='visitor', :key="visitor.id")
+        article.wrap-counter
+          div.counter {{ counter }}
+          button.decrement-button(@click="decrementCounter") Decrement
+          
+
+        article
+        h2.title Walkpaths
+        
+        article.bluebox
+          walkpath-card.single-card-blue(v-for='walkpath in walkpaths', :walkpath='walkpath', :key="walkpath.id")
+    
+        article
+          h2.title Visitors
+
+        article.greenbox
+          visitors-card.single-card-green(v-for='visitor in visitors', :visitor='visitor', :key="visitor.id")
 
 </template>
 
@@ -47,13 +52,13 @@ export default {
 <style scoped>
 section {
   display: grid;
-  grid-template-rows: 450px auto auto auto auto;
+  grid-template-rows: auto 450px auto auto auto auto;
   justify-items: center;
   padding: 40px 0;
   border-radius: 8px;
   height: 100%;
-  padding: 20px;
-  margin: 20px;
+  padding: 0 20px 20px 20px;
+  margin: 0 20px 20px 20px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     inset -3px 5px 0px -7px rgba(13, 77, 255, 0);
   box-shadow: 0px 10px 13px -7px #000000,
@@ -64,20 +69,15 @@ section {
   display: flex;
   flex-direction: column;
   justify-items: stretch;
+  align-self: center;
   width: 300px;
   height: 300px;
   padding: 20px;
   border-radius: 50%;
-  background: rgb(176, 224, 230);
-  background: linear-gradient(
-    0deg,
-    rgba(176, 224, 230, 1) 0%,
-    rgba(65, 192, 174, 0.6558998599439776) 14%,
-    rgba(5, 142, 247, 1) 100%
-  );
+  background-color: darkslateblue;
 }
 
-.increment-button {
+.decrement-button {
   place-self: center;
   color: deepskyblue;
   padding: 10px 20px;
@@ -97,7 +97,11 @@ section {
   color: whitesmoke;
 }
 
-.increment-button:hover {
+button:focus {
+  outline: 0;
+}
+
+.decrement-button:hover {
   background-color: deepskyblue;
   color: white;
 }

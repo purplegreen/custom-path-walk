@@ -24,11 +24,10 @@ export default {
 
   div.wrapper 
     h2 {{ walkpath.name }}
-
-          h6.atLeft Composition:
-            
-              fade.transition
-  
+        
+          h6.textformat  by
+          h6.textformat(v-for="visitor in walkpath.composer") {{ visitor.name }} 
+          h6.textformat Walk Composition
     div
             h4(@click="toggleModal")(v-for="slots in walkpath.composition") {{ slots.name }} 
                 
@@ -40,6 +39,7 @@ export default {
                       li {{ slots.category }}
                       li {{ slots.flow }}
                       li {{ slots.duration }} min
+                      
                     
 </template>
 
@@ -69,6 +69,8 @@ h4 {
 
 h6 {
   color: darkslategray;
+  margin-block-start: 1.03em;
+  margin-block-end: 1.03em;
 }
 
 .modal {
@@ -79,7 +81,7 @@ h6 {
   border-radius: 8px;
 }
 
-.atLeft {
+.textformat {
   text-align: left;
 }
 

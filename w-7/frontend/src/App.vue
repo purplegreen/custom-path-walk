@@ -15,6 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(0, 123, 218, 1) 99%
+  );
 }
 
 #nav {
@@ -27,6 +33,6 @@
 }
 
 #nav a.router-link-exact-active {
-  color: darkseagreen;
+  color: white;
 }
 </style>

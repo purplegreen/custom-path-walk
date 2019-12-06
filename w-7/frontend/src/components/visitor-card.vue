@@ -23,9 +23,9 @@ export default {
 
 <template lang='pug'>
 
-h4(@mouseover="toggleModal") {{ visitor.name}}
+h4(@mouseover="toggleModal") {{ visitor.name }}
    span(v-if='isOpen')
-      li.lis-text(@mouseover="toggleModal") {{ visitor.mood}} 
+      li.lis-text(@mouseover="toggleModal") {{ visitor.mood }} 
    
  
 

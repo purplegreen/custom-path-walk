@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    counter: 0,
+    counter: 17,
     walkpaths: [],
     visitors: []
     // ,
@@ -28,8 +28,8 @@ export default new Vuex.Store({
     // }
   },
   actions: {
-    incrementCounter({ commit, state }) {
-      const newCount = state.counter + 1;
+    decrementCounter({ commit, state }) {
+      const newCount = state.counter - 1;
       commit("SET_COUNTER", newCount);
     },
     async fetchWalkpaths({ commit }) {
