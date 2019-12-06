@@ -23,9 +23,9 @@ export default {
 
 <template lang='pug'>
 
-h4(@mouseover="toggleModal") {{ visitor.name }}
-   span(v-if='isOpen')
-      li.lis-text(@mouseover="toggleModal") {{ visitor.mood }} 
+h4 {{ visitor.name }}
+  
+      li.lis-text {{ visitor.mood }} 
    
  
 
@@ -49,18 +49,5 @@ h4 {
   list-style: none;
   text-align: left;
   font-weight: 100;
-}
-
-.fade-enter {
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease-out;
-}
-
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
