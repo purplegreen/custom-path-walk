@@ -73,8 +73,17 @@ axios.post('http://localhost:3000/visitors/:id/walkpaths', { walkpath:id }).then
 axios.post('http://localhost:3000/walkpath/:id/composition', { slot:id }).then(console.log)
 ```
 
-###
+### Delete
+
+```
+axios.delete('http://localhost:3000/walkpath/:id').then(console.log);
 
 ```
 
+```
+axios.delete('http://localhost:3000/visitors/:id').then(console.log);
+```
+
+```
+axios.delete('http://localhost:3000/slots/:id').then(console.log);
 ```

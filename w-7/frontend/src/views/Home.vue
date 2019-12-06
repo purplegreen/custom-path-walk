@@ -112,6 +112,7 @@ section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-evenly;
   padding: 10px;
   margin-bottom: 50px;
@@ -131,7 +132,7 @@ section {
   background: #058ef7;
   border-radius: 8px;
   padding: 20px;
-  margin: 4px 20px;
+  margin: 20px 20px;
   width: 20vw;
 }
 

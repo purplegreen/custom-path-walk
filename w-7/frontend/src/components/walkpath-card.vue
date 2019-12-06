@@ -29,28 +29,18 @@ export default {
             
               fade.transition
   
-    ul
+    div
             h4(@click="toggleModal")(v-for="slots in walkpath.composition") {{ slots.name }} 
-                span(v-if='isOpen')
+                
+              transition(name="fade")
+                div.modal(v-if='isOpen')
+                  p
                     ul.lis-text(@click="toggleModal") 
                       li {{ slots.tipology }}
                       li {{ slots.category }}
                       li {{ slots.flow }}
                       li {{ slots.duration }} min
                     
-                     
-
-
-                
-                              
-                      
-               
-  
-              
-             
-             
-
-
 </template>
 
 <style scoped>
@@ -81,6 +71,14 @@ h6 {
   color: darkslategray;
 }
 
+.modal {
+  width: 200px;
+  height: auto;
+  padding: 4px;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 .atLeft {
   text-align: left;
 }
@@ -91,7 +89,7 @@ h6 {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease-out;
+  transition: opacity 0.6s ease-out;
 }
 
 .fade-leave-to {

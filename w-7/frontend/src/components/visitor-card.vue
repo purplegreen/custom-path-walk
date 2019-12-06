@@ -1,10 +1,20 @@
 <script>
 export default {
+  data() {
+    return {
+      isOpen: false
+    };
+  },
   name: "VisitorsCard",
   props: ["visitor"],
   computed: {
     visitorUrl() {
       return `/visitor/${this.visitors._id}`;
+    }
+  },
+  methods: {
+    toggleModal() {
+      this.isOpen = !this.isOpen;
     }
   }
 };
@@ -13,8 +23,9 @@ export default {
 
 <template lang='pug'>
 
-h4 {{ visitor.name}}
-   li.lis-text mood: {{ visitor.mood}} 
+h4(@mouseover="toggleModal") {{ visitor.name}}
+   span(v-if='isOpen')
+      li.lis-text(@mouseover="toggleModal") {{ visitor.mood}} 
    
  
 
@@ -38,5 +49,18 @@ h4 {
   list-style: none;
   text-align: left;
   font-weight: 100;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
