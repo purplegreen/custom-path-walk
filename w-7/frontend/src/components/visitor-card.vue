@@ -11,11 +11,6 @@ export default {
     visitorUrl() {
       return `/visitor/${this.visitors._id}`;
     }
-  },
-  methods: {
-    toggleModal() {
-      this.isOpen = !this.isOpen;
-    }
   }
 };
 </script>
@@ -24,8 +19,17 @@ export default {
 <template lang='pug'>
 
 h4 {{ visitor.name }}
-  
-      li.lis-text {{ visitor.mood }} 
+    //- div.image(v-if="lazy")
+    //-   img(src="@/assets/farm.svg", alt="icons made by www.flaticon.com")
+    //- div.elseimage(v-else="nonlazy: !lazy")
+    //-   img(src="@/assets/tree.svg")
+
+      
+    li.lis-text {{ visitor.mood }} 
+
+    h6
+    li.lis-text(v-for="walkpaths in visitor.walkpaths") {{ walkpaths.name }}  
+         
    
  
 
@@ -49,5 +53,10 @@ h4 {
   list-style: none;
   text-align: left;
   font-weight: 100;
+}
+
+img {
+  width: 40%;
+  height: 40%;
 }
 </style>

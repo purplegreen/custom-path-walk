@@ -26,7 +26,8 @@ export default {
     h2 {{ walkpath.name }}
         
           h6.textformat  by
-          h6.textformat(v-for="visitor in walkpath.composer") {{ visitor.name }} 
+           
+          h6.textformat(v-for="walkpath in walkpath.composers") {{ visitor.name }} 
           h6.textformat Walk Composition
     div
             h4(@click="toggleModal")(v-for="slots in walkpath.composition") {{ slots.name }} 

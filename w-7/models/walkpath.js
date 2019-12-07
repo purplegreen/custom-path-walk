@@ -15,7 +15,7 @@ const WalkPathSchema = new mongoose.Schema({
       }
     }
   ],
-  composer: [
+  composers: [
     {
       type: mongoose.SchemaTypes.ObjectId,
       ref: "Visitor",
