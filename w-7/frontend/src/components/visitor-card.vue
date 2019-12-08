@@ -19,20 +19,19 @@ export default {
 <template lang='pug'>
 
 
+  div
+    h4 {{ visitor.name }}   
+      li.lis-text {{ visitor.mood }} 
 
-h4 {{ visitor.name }}   
-    li.lis-text {{ visitor.mood }} 
-
-    
-
-    div.image(v-if="haswalk")
-      
+    div
       h6
-      li.lis-text(v-for="walkpaths in visitor.walkpaths" :key="haswalk") {{ walkpaths.name}} 
-      img(src="@/assets/farm.svg" alt="icons made by www.flaticon.com")
+      ul
+        li.lis-text(v-for="walkpaths in visitor.walkpaths" :key="walkpaths.id") has composed the Walkpath:  {{ walkpaths.name}}  
+        img(v-if="visitor.walkpaths.length")(src="@/assets/farm.svg" alt="icons made by www.flaticon.com")
+        img(v-else)(src="@/assets/tree.svg" alt="icons made by www.flaticon.com")
 
-    div.elseimage(v-else)
-      img(src="@/assets/tree.svg" alt="icons made by www.flaticon.com")
+
+
          
 </template>
 
