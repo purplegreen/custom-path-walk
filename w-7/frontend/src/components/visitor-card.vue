@@ -18,23 +18,19 @@ export default {
 
 <template lang='pug'>
 
-h4 {{ visitor.name }}
-    //- div.image(v-if="lazy")
-    //-   img(src="@/assets/farm.svg", alt="icons made by www.flaticon.com")
-    //- div.elseimage(v-else="nonlazy: !lazy")
-    //-   img(src="@/assets/tree.svg")
 
-      
+
+h4 {{ visitor.name }}   
     li.lis-text {{ visitor.mood }} 
 
     h6
-    li.lis-text(v-for="walkpaths in visitor.walkpaths") {{ walkpaths.name }}  
+    li.lis-text(v-for="walkpaths in visitor.walkpaths" :key="haswalk") {{ walkpaths.name }}  
+
+    div.image(v-if="haswalk")
+      img(src="@/assets/farm.svg" alt="icons made by www.flaticon.com")
+    div.elseimage(v-else="nowalk: !haswalk")
+      img(src="@/assets/tree.svg" alt="icons made by www.flaticon.com")
          
-   
- 
-
-
-
 </template>
 
 <style scoped>
