@@ -42,13 +42,21 @@ http://localhost:3000/slots/all
 ### Create a new Visitor
 
 ```
-axios.post('http://localhost:3000/visitors', {name: Mina, mood:rusted, walkpaths: [] }).then(console.log)
+axios.post('http://localhost:3000/visitors', {name:'Mina', mood:'rusted', walkpaths: [] }).then(console.log)
 ```
 
 ### Create a new Walkpath
 
 ```
-axios.post('http://localhost:3000/walkpath', {name: Along the Shore, composition: [ { slot:id } ]}).then(console.log)
+axios.post('http://localhost:3000/walkpath', {name: 'Along the Shore', composition: [ { slot:id } ]}).then(console.log)
+```
+
+```
+example
+```
+
+```
+axios.post('http://localhost:3000/walkpath', {name: 'Silvery Sand', composition: ['5de914ed69efb4095f2d2b7e', '5de9119269efb4095f2d2b7a', '5de8dfdb3d21b807ad977c5f'], composers: ['5ddb9e174ed21c03eb8b84a7']}).then(console.log)
 ```
 
 ### Create a new Slot

@@ -22,12 +22,13 @@ export default {
 
 <template lang="pug">
 
-  div.wrapper 
+  article
     h2 {{ walkpath.name }}
         
-          h6.textformat  by
-           
-          h6.textformat(v-for="walkpath in walkpath.composers") {{ visitor.name }} 
+          h6
+           span.texttitle by 
+           span.texttitle(v-for="visitor in walkpath.composers") {{ visitor.name }} 
+
           h6.textformat Walk Composition
     div
             h4(@click="toggleModal")(v-for="slots in walkpath.composition") {{ slots.name }} 
@@ -80,6 +81,10 @@ h6 {
   padding: 4px;
   margin: 0 auto;
   border-radius: 8px;
+}
+
+.texttitle {
+  color: lightcyan;
 }
 
 .textformat {
