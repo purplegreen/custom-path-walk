@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      isOpen: false
+      haswalk: true
     };
   },
   name: "VisitorsCard",
@@ -23,12 +23,15 @@ export default {
 h4 {{ visitor.name }}   
     li.lis-text {{ visitor.mood }} 
 
-    h6
-    li.lis-text(v-for="walkpaths in visitor.walkpaths" :key="haswalk") {{ walkpaths.name }}  
+    
 
     div.image(v-if="haswalk")
+      
+      h6
+      li.lis-text(v-for="walkpaths in visitor.walkpaths" :key="haswalk") {{ walkpaths.name}} 
       img(src="@/assets/farm.svg" alt="icons made by www.flaticon.com")
-    div.elseimage(v-else="nowalk: !haswalk")
+
+    div.elseimage(v-else)
       img(src="@/assets/tree.svg" alt="icons made by www.flaticon.com")
          
 </template>
