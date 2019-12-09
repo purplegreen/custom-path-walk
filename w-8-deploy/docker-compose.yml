@@ -3,7 +3,7 @@ services:
   backend:
     build: backend
     environment:
-      MONGODB_CONNECTION_STRING: "mongodb://mongodb/guidedwalk"
+      MONGODB_CONNECTION_STRING: "mongodb://mongodb/wtm"
       PORT: "3000"
     ports:
       - 3000:3000
