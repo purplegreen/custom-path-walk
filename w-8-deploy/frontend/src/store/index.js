@@ -8,9 +8,11 @@ export default new Vuex.Store({
   state: {
     counter: 17,
     walkpaths: [],
-    visitors: []
-    // ,
-    // populate: []
+    visitors: [],
+    slots: [],
+    walkpath: {},
+    visitor: {},
+    slot: {}
   },
   mutations: {
     SET_COUNTER(state, newCount) {
@@ -34,10 +36,6 @@ export default new Vuex.Store({
     SET_SLOT(state, data) {
       state.slot = data;
     }
-    // ,
-    // SET_POPULATE(state, data) {
-    //   state.populate = data;
-    // }
   },
   actions: {
     decrementCounter({ commit, state }) {
@@ -53,9 +51,9 @@ export default new Vuex.Store({
 
     async fetchWalkpath({ commit }, id) {
       const result = await axios.get(
-        `${process.env.VUE_APP_API_URL}/walkpath/${id}/json`
+        `${process.env.VUE_APP_API_URL}/walkpaths/${id}/json`
       );
-      commit("SET_WALKPATHS", result.data);
+      commit("SET_WALKPATH", result.data);
     },
 
     async fetchVisitors({ commit }) {
@@ -67,9 +65,9 @@ export default new Vuex.Store({
 
     async fetchVisitor({ commit }, id) {
       const result = await axios.get(
-        `${process.env.VUE_APP_API_URL}/visitors/${id}/json`
+        `${process.env.VUE_APP_API_URL}/visitor/${id}/json`
       );
-      commit("SET_VISITORS", result.data);
+      commit("SET_VISITOR", result.data);
     },
     async fetchSlots({ commit }) {
       const result = await axios.get(
@@ -79,15 +77,10 @@ export default new Vuex.Store({
     },
     async fetchSlot({ commit }, id) {
       const result = await axios.get(
-        `${process.env.VUE_APP_API_URL}/slot/a${id}/json`
+        `${process.env.VUE_APP_API_URL}/slot/${id}/json`
       );
-      commit("SET_SLOTS", result.data);
+      commit("SET_SLOT", result.data);
     }
-    // ,
-    // async populateDatabase({ commit }) {
-    //   const fillIn = await axios.get("http://localhost:8080/setup-database");
-    //   commit("SET_POPULATE", fillIn.data);
-    // }
   },
   modules: {}
 });
