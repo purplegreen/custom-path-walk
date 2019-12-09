@@ -8,7 +8,7 @@
       
       h2 THANK YOU TO ALL! 
         p   
-        h6 Arman, Celia, Maria, Omur, everyones in the team, and all attendees!!! For your help, support and the walk together along this journey! I'm going to miss you. The meetups, and your amazing presence and help on Slack. How I'm going to do now? 
+        h6 Arman, Celia, Maria, Omur, Can, everyones in the team, and all attendees!!! For your help, support and the walk together along this journey! I'm going to miss you. The meetups, and your amazing presence and help on Slack. How I'm going to do now? 
           
       h4 npm run build 🔮
         h6
